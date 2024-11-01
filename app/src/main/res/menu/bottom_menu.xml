@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottomEquipo"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="Equipo"/>
+
+    <item
+        android:id="@+id/bottomPokedex"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="Pokedex"/>
+
+    <item
+        android:id="@+id/bottomGenerar"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="Generar"/>
+</menu>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Creador de Cartas Pokemonr</string>
+    <string name="acero">Acero</string>
+    <string name="volador">Volador</string>
+    <string name="agua">Agua</string>
+    <string name="hielo">Hielo</string>
+    <string name="planta">Planta</string>
+    <string name="Bicho">Bicho</string>
+    <string name="electrico">Electrico</string>
+    <string name="normal">Normal</string>
+    <string name="roca">Roca</string>
+    <string name="tierra">Tierra</string>
+    <string name="fuego">Fuego</string>
+    <string name="lucha">Lucha</string>
+    <string name="hada">Hada</string>
+    <string name="psiquico">Psiquico</string>
+    <string name="veneno">Veneno</string>
+    <string name="siniestro">Siniestro</string>
+</resources>

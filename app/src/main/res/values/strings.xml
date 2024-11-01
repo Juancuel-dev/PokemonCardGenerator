@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Pokemon Card Creator</string>
+    <string name="acero">Steel</string>
+    <string name="volador">Flying</string>
+    <string name="agua">Water</string>
+    <string name="hielo">Ice</string>
+    <string name="planta">Grass</string>
+    <string name="Bicho">Bug</string>
+    <string name="electrico">Electric</string>
+    <string name="normal">Normal</string>
+    <string name="roca">Rock</string>
+    <string name="tierra">Ground</string>
+    <string name="fuego">Fire</string>
+    <string name="lucha">Fight</string>
+    <string name="hada">Fairy</string>
+    <string name="psiquico">Psychic</string>
+    <string name="veneno">Venom</string>
+    <string name="siniestro">Dark</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
