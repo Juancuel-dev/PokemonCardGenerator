@@ -1,8 +1,9 @@
 package es.agora.pokemoncardcreator;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Pokemon {
+public class Pokemon implements Serializable {
 
     private String nombre;
     private int numero;
@@ -18,7 +19,7 @@ public class Pokemon {
         this.rutaImagen = " ";
     }
 
-    public Pokemon(String nombre, int numero, ArrayList<Tipo> tipos, String descripcion, String rutaImagen) {
+    public Pokemon(int numero, String nombre, ArrayList<Tipo> tipos, String descripcion, String rutaImagen) {
         this.nombre = nombre;
         this.numero = numero;
         this.tipos = tipos;
