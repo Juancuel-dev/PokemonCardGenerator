@@ -1,30 +1,36 @@
 package es.agora.pokemoncardcreator;
 
+import android.content.Context;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Pokemon implements Serializable {
 
     private String nombre;
-    private int numero;
+    private String numero;
     private ArrayList<Tipo> tipos;
     private String descripcion;
     private String rutaImagen;
 
     public Pokemon() {
         this.nombre = " ";
-        this.numero =-1;
+        this.numero =" ";
         this.tipos = new ArrayList<>();
         this.descripcion = " ";
         this.rutaImagen = " ";
     }
 
-    public Pokemon(int numero, String nombre, ArrayList<Tipo> tipos, String descripcion, String rutaImagen) {
+    public Pokemon(String numero, String nombre, ArrayList<Tipo> tipos, String descripcion, String rutaImagen) {
         this.nombre = nombre;
         this.numero = numero;
         this.tipos = tipos;
         this.descripcion = descripcion;
         this.rutaImagen = rutaImagen;
+    }
+    public String getDrawableId() {
+
+        return "p"+this.getNumero();
     }
 
     public String getNombre() {
@@ -35,11 +41,11 @@ public class Pokemon implements Serializable {
         this.nombre = nombre;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 
