@@ -1,18 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <item
-        android:id="@+id/bottomEquipo"
-        android:icon="@drawable/ic_launcher_background"
-        android:title="Equipo"/>
-
+        android:id="@+id/fragmentEquipo"
+        android:icon="@drawable/pokebola"
+        android:title="@string/equipo" />
     <item
-        android:id="@+id/bottomPokedex"
-        android:icon="@drawable/ic_launcher_background"
-        android:title="Pokedex"/>
-
+        android:id="@+id/fragmentPokedex"
+        android:icon="@drawable/pokedex"
+        android:title="@string/pokedex" />
     <item
-        android:id="@+id/bottomGenerar"
-        android:icon="@drawable/ic_launcher_background"
-        android:title="Generar"/>
+        android:id="@+id/fragmentGenerar"
+        android:icon="@drawable/dices"
+        android:title="@string/generar" />
 </menu>

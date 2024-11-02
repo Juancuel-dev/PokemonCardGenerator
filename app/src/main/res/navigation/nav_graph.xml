@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/fragmentGenerar">
+    app:startDestination="@id/fragmentEquipo">
 
     <fragment
         android:id="@+id/fragmentEquipo"
@@ -11,11 +11,8 @@
         android:label="fragment_equipo"
         tools:layout="@layout/fragment_equipo" >
         <action
-            android:id="@+id/action_fragmentEquipo_to_fragmentPokedex2"
-            app:destination="@id/fragmentPokedex" />
-        <action
-            android:id="@+id/action_fragmentEquipo_to_fragmentGenerar"
-            app:destination="@id/fragmentGenerar" />
+            android:id="@+id/action_fragmentEquipo_to_detallesFragment"
+            app:destination="@id/detallesFragment" />
     </fragment>
     <fragment android:id="@+id/placeholder" />
     <fragment
@@ -24,11 +21,8 @@
         android:label="fragment_pokedex"
         tools:layout="@layout/fragment_pokedex" >
         <action
-            android:id="@+id/action_fragmentPokedex_to_fragmentGenerar"
-            app:destination="@id/fragmentGenerar" />
-        <action
-            android:id="@+id/action_fragmentPokedex_to_fragmentEquipo"
-            app:destination="@id/fragmentEquipo" />
+            android:id="@+id/action_fragmentPokedex_to_detallesFragment"
+            app:destination="@id/detallesFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragmentGenerar"
@@ -36,10 +30,12 @@
         android:label="fragment_generar"
         tools:layout="@layout/fragment_generar" >
         <action
-            android:id="@+id/action_fragmentGenerar_to_fragmentPokedex"
-            app:destination="@id/fragmentPokedex" />
-        <action
-            android:id="@+id/action_fragmentGenerar_to_fragmentEquipo"
-            app:destination="@id/fragmentEquipo" />
+            android:id="@+id/action_fragmentGenerar_to_detallesFragment"
+            app:destination="@id/detallesFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/detallesFragment"
+        android:name="es.agora.pokemoncardcreator.DetallesFragment"
+        android:label="fragment_detalles"
+        tools:layout="@layout/fragment_detalles" />
 </navigation>
