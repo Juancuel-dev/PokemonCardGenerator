@@ -6,12 +6,14 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
+import java.util.HashMap;
+
 import es.agora.pokemoncardcreator.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
-
+    static HashMap<Integer,Pokemon> pokedex;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,5 +28,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.bottomNavView, navController);
         // Configuramos la toolbar para que gestione el cambio de título con la navegación bottom
         NavigationUI.setupWithNavController(binding.toolbar, navController);
+        pokedex  = PokemonRepository.getInstance().toMapa();
     }
 }

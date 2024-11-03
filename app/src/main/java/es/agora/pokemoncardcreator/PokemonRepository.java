@@ -1,16 +1,19 @@
 package es.agora.pokemoncardcreator;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 public class PokemonRepository {
     private ArrayList<Pokemon> lista;
+    private HashMap<Integer, Pokemon> equipo;
     private static PokemonRepository instance;
 
     private PokemonRepository() {
 
         this.lista = new ArrayList<>();
-
+        this.equipo = new HashMap<>();
         this.lista.add(new Pokemon("001","Bulbasaur",new ArrayList<>(List.of(Tipo.Planta,Tipo.Veneno)),"Tras nacer, crece alimentándose durante un tiempo de los nutrientes que contiene el bulbo de su lomo.","res/drawable/p001.png"));
         this.lista.add(new Pokemon("002","Ivysaur",new ArrayList<>(List.of(Tipo.Planta,Tipo.Veneno)),"Cuanta más luz solar recibe, más aumenta su fuerza y más se desarrolla el capullo que tiene en el lomo.","res/drawable/p002.png"));
         this.lista.add(new Pokemon("003","Venusaur",new ArrayList<>(List.of(Tipo.Planta,Tipo.Veneno)),"Puede convertir la luz del sol en energía. Por esa razón, es más poderoso en verano.","res/drawable/p003.png"));
@@ -69,7 +72,48 @@ public class PokemonRepository {
         return instance;
     }
 
-    public ArrayList<Pokemon> getLista(){
+
+    public ArrayList<Pokemon> getLista() {
+
         return lista;
+
     }
+
+    public HashMap<Integer,Pokemon> toMapa(){
+
+        HashMap<Integer,Pokemon> mapa = new HashMap<>();
+        for(Pokemon p:lista){
+            mapa.put(Integer.parseInt(p.getNumero()),p);
+        }
+        return mapa;
+    }
+
+
+    // Método para obtener el equipo
+
+    public HashMap<Integer, Pokemon> getEquipo() {
+
+        return equipo;
+
+    }
+
+
+    // Método para agregar un Pokémon al equipo
+
+    public void agregarPokemonAlEquipo(Pokemon pokemon) {
+
+        equipo.put(Integer.parseInt(pokemon.getNumero()), pokemon);
+
+    }
+
+
+    // Método para verificar si un Pokémon ya está en el equipo
+
+    public boolean contienePokemon(int numero) {
+
+        return equipo.containsKey(numero);
+
+    }
+
+
 }
