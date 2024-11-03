@@ -19,6 +19,8 @@
     <string name="pokedex">Pokedex</string>
     <string name="equipo">Team</string>
     <string name="generar">Generate</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="desconocido">Unknown</string>
+    <string name="numero_desconocido">Nº???</string>
+
+
 </resources>

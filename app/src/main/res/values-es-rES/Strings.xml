@@ -20,4 +20,6 @@
     <string name="pokedex">Pokedex</string>
     <string name="equipo">Equipo</string>
     <string name="generar">Generar</string>
+    <string name="desconocido">Por descubrir</string>
+    <string name="numero_desconocido">Nº???</string>
 </resources>
