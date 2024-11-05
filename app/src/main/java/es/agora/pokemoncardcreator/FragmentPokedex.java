@@ -4,8 +4,9 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,6 @@ import es.agora.pokemoncardcreator.databinding.FragmentPokedexBinding;
 
 public class FragmentPokedex extends Fragment {
     private FragmentPokedexBinding binding;
-    private NavController navController;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -27,12 +27,42 @@ public class FragmentPokedex extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
-        binding.recyclerViewPokedex.setLayoutManager(gridLayoutManager);
+        binding.viewPager.setAdapter(new FragmentStateAdapter(this) {
+            @NonNull
+            @Override
+            public Fragment createFragment(int position) {
+                switch (position) {
+                    case 0:
+                    default:
+                        return new FragmentTabEv1();
+                    case 1:
+                        return new FragmentTabEv2();
+                    case 2:
+                        return new FragmentTabEv3();
+                }
+            }
 
-        Adapter pokemonAdapter = new Adapter(PokemonRepository.getInstance().getLista());
-        binding.recyclerViewPokedex.setAdapter(pokemonAdapter);
+            @Override
+            public int getItemCount() {
+                return 3;
+            }
+        });
 
-        System.out.println("Tamaño de la lista: " + PokemonRepository.getInstance().getLista().size());
+        new TabLayoutMediator(binding.tabLayout, binding.viewPager, new TabLayoutMediator.TabConfigurationStrategy() {
+            @Override
+            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
+                switch (position) {
+                    case 0:
+                        tab.setText("Evolución 1");
+                        break;
+                    case 1:
+                        tab.setText("Evolución 2");
+                        break;
+                    case 2:
+                        tab.setText("Evolución 3");
+                        break;
+                }
+            }
+        }).attach();
     }
 }

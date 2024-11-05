@@ -21,13 +21,15 @@ public class MainActivity extends AppCompatActivity {
 
         // Cargamos la Toolbar
         setSupportActionBar(binding.toolbar);
-
+        binding.bottomNavView.setItemIconTintList(null);
         // Recuperamos el NavController
         NavController navController = ((NavHostFragment)getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment)).getNavController();
         // A NavigationUI le indicamos qué elemento debe realizar la navegación y con qué controlador
         NavigationUI.setupWithNavController(binding.bottomNavView, navController);
         // Configuramos la toolbar para que gestione el cambio de título con la navegación bottom
         NavigationUI.setupWithNavController(binding.toolbar, navController);
-        pokedex  = PokemonRepository.getInstance().toMapa();
+        pokedex  = PokemonRepository.getInstance().toMapa(1);
+        pokedex.putAll(PokemonRepository.getInstance().toMapa(2));
+        pokedex.putAll(PokemonRepository.getInstance().toMapa(3));
     }
 }

@@ -73,6 +73,50 @@ public class Pokemon implements Serializable {
         this.rutaImagen = rutaImagen;
     }
 
+    public int getTipo(int pos){
+        if(pos==0 || (pos==1&&this.tipos.size()>1) ){
+            switch(getTipos().get(pos)){
+                case Agua:
+                    return R.drawable.agua;
+                case Hada:
+                    return R.drawable.hada;
+                case Roca:
+                    return R.drawable.roca;
+                case Acero:
+                    return R.drawable.acero;
+                case Bicho:
+                    return R.drawable.bicho;
+                case Fuego:
+                    return R.drawable.fuego;
+                case Hielo:
+                    return R.drawable.hielo;
+                case Lucha:
+                    return R.drawable.lucha;
+                case Dragon:
+                    return R.drawable.dragon;
+                case Normal:
+                    return R.drawable.normal;
+                case Planta:
+                    return R.drawable.planta;
+                case Tierra:
+                    return R.drawable.tierra;
+                case Veneno:
+                    return R.drawable.veneno;
+                case Volador:
+                    return R.drawable.volador;
+                case Fantasma:
+                    return R.drawable.fantasma;
+                case Psiquico:
+                    return R.drawable.psiquico;
+                case Electrico:
+                    return R.drawable.electrico;
+                case Siniestro:
+                    return R.drawable.siniestro;
+            }
+        }
+        return -1;
+    }
+
     @Override
     public String toString() {
         return "Pokemon{" +

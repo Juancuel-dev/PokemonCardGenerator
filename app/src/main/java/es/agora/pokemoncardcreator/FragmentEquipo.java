@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public class FragmentEquipo extends Fragment {
 
         super.onViewCreated(view,savedInstanceState);
         recyclerView = view.findViewById(R.id.recycler_view_equipo);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
 
         HashMap<Integer, Pokemon> equipo = PokemonRepository.getInstance().getEquipo();
         System.out.println("Tamaño del equipo: " + equipo.size());
